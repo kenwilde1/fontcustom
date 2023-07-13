@@ -77,8 +77,8 @@ def createGlyph( name, source, code ):
             aligned_to_pixel_grid = (width % design_px == 0)
             if (aligned_to_pixel_grid):
                 shift = glyph.left_side_bearing % design_px
-                glyph.left_side_bearing = glyph.left_side_bearing - shift
-                glyph.right_side_bearing = glyph.right_side_bearing + shift
+                glyph.left_side_bearing = round(glyph.left_side_bearing - shift)
+                glyph.right_side_bearing = round(glyph.right_side_bearing + shift)
 
 # Add valid space glyph to avoid "unknown character" box on IE11
 glyph = font.createChar(32)
